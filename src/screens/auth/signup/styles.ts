@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
 
   inputContainer: {
-    height: RF(180),
+    height: RF(200),
     // borderWidth: 2,
     justifyContent: 'flex-end',
   },

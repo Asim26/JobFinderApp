@@ -93,7 +93,9 @@ const Login = () => {
                   <Button
                     title={'Login'}
                     borderRadius={RF(10)}
-                    onPress={() => {}}
+                    onPress={() => {
+                      handleSubmit();
+                    }}
                   />
                 </View>
               </>

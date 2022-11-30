@@ -153,7 +153,7 @@ const SignUp = () => {
               <Text>Already Have Account? </Text>
               <TouchableOpacity
                 onPress={() => {
-                  navigate(Routes.SIGN_UP);
+                  navigate(Routes.LOGIN);
                 }}>
                 <Text style={styles.createAccountText}> Log In</Text>
               </TouchableOpacity>
