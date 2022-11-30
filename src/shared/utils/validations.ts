@@ -12,8 +12,7 @@ export const LoginSchema = Yup.object().shape({
 });
 
 export const SignUPSchema = Yup.object().shape({
-  firstName: Yup.string().required('First Name Required'),
-  lastName: Yup.string().required('Last Name Required'),
+  userName: Yup.string().required('User Name Required'),
   email: Yup.string().email('Invalid Email Address').required('Email Required'),
   password: Yup.string()
     .required('Password Required')
@@ -22,10 +21,6 @@ export const SignUPSchema = Yup.object().shape({
       passwordRegExp,
       'Password must be a combination of letters and numbers',
     ),
-  confirmPassword: Yup.string().oneOf(
-    [Yup.ref('password'), null],
-    'Passwords must match',
-  ),
 });
 
 export const ResetPasswordSchema = Yup.object().shape({

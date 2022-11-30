@@ -122,11 +122,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     height: RF(43),
-    borderRadius: RF(25),
+    borderRadius: RF(0),
     borderWidth: RF(1),
     borderColor: colors.LIGHT_GRAY,
     ...GST.px3,
-    // backgroundColor: colors.SILVER,
+    backgroundColor: colors.WHITE,
   },
   multiline: {
     // height: RF(80),

@@ -6,7 +6,7 @@ const images = {
   southAmerica: require('./southAmerica.png'),
   glob: require('./globe.png'),
   message: require('./messenger.png'),
-  profile: require('./user.png'),
+  user: require('./user.png'),
   settings: require('./setting.png'),
   lock: require('./lock.png'),
   notification: require('./notification.png'),

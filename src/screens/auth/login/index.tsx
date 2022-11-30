@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {View, Text, StyleSheet, Alert} from 'react-native';
+import {View, Text, Alert, TouchableOpacity} from 'react-native';
 import Wrapper from '../../../shared/components/wrapper';
 import styles from './styles';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
@@ -10,6 +10,9 @@ import Input from '../../../shared/components/input';
 import images from '../../../assets/images/images';
 import Button from '../../../shared/components/button/button';
 import colors from '../../../assets/colors/colors';
+import SocialButton from '../../../shared/components/socialButton';
+import {navigate} from '../../../shared/services/NavService';
+import {Routes} from '../../../shared/utils/routes';
 
 const Login = () => {
   const initialValues = {
@@ -32,16 +35,9 @@ const Login = () => {
     <Wrapper>
       <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-          <View
-            style={{
-              height: RF(140),
-              borderWidth: 2,
-              justifyContent: 'flex-end',
-            }}>
-            <Text style={{fontSize: RF(30), fontWeight: '700'}}>
-              Welcome Back!
-            </Text>
-            <Text style={{fontSize: RF(15), width: RF(200)}}>
+          <View style={styles.headingContainer}>
+            <Text style={styles.headingText}>Welcome Back!</Text>
+            <Text style={styles.bodyText}>
               Fill your details or continue with social media
             </Text>
           </View>
@@ -59,12 +55,7 @@ const Login = () => {
               touched,
             }) => (
               <>
-                <View
-                  style={{
-                    height: RF(130),
-                    borderWidth: 2,
-                    justifyContent: 'flex-end',
-                  }}>
+                <View style={styles.inputContainer}>
                   <Input
                     returnKeyType={'next'}
                     value={values.email}
@@ -92,20 +83,13 @@ const Login = () => {
                   />
                 </View>
 
-                <View
-                  style={{
-                    width: '100%',
-                    justifyContent: 'center',
-                    alignItems: 'flex-end',
-                  }}>
+                <TouchableOpacity
+                  style={styles.forgetPasswordContainer}
+                  onPress={() => {}}>
                   <Text>Forget Password?</Text>
-                </View>
-                <View
-                  style={{
-                    height: RF(70),
-                    borderWidth: 2,
-                    justifyContent: 'flex-end',
-                  }}>
+                </TouchableOpacity>
+
+                <View style={styles.loginButtonContainer}>
                   <Button
                     title={'Login'}
                     borderRadius={RF(10)}
@@ -115,12 +99,40 @@ const Login = () => {
               </>
             )}
           </Formik>
+
           <View style={styles.orTextContainer}>
             <View style={styles.line}></View>
             <Text style={[styles.textStyle, {color: colors.BLACK}]}>
               {'  Or Continue with  '}
             </Text>
             <View style={styles.line}></View>
+          </View>
+          <View style={styles.socialContainer}>
+            <SocialButton
+              logo={images.google}
+              marginLeft={RF(10)}
+              marginRight={RF(10)}
+              onPress={() => {}}
+              bgColor={colors.GOOGLE_BTN_COLOR}
+            />
+            <SocialButton
+              logo={images.facebook}
+              marginLeft={RF(10)}
+              marginRight={RF(10)}
+              onPress={() => {}}
+              bgColor={colors.FACEBOOK_BTN_COLOR}
+            />
+          </View>
+          <View style={styles.signUpTextContainer}>
+            <View style={styles.signUpTextInnerContainer}>
+              <Text>New User? </Text>
+              <TouchableOpacity
+                onPress={() => {
+                  navigate(Routes.SIGN_UP);
+                }}>
+                <Text style={styles.createAccountText}>Create Account</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </KeyboardAwareScrollView>

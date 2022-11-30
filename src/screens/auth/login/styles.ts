@@ -5,11 +5,46 @@ import {RF} from '../../../shared/theme/responsive';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderWidth: 2,
+    // borderWidth: 2,
     paddingHorizontal: RF(14),
   },
+
+  headingContainer: {
+    height: RF(160),
+    // borderWidth: 2,
+    justifyContent: 'flex-end',
+  },
+  headingText: {
+    fontSize: RF(30),
+    fontWeight: '700',
+  },
+  bodyText: {
+    fontSize: RF(15),
+    width: RF(200),
+  },
+
+  inputContainer: {
+    height: RF(160),
+    // borderWidth: 2,
+    justifyContent: 'flex-end',
+  },
+
+  forgetPasswordContainer: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    // borderWidth: 2,
+  },
+
+  loginButtonContainer: {
+    height: RF(70),
+    // borderWidth: 2,
+    justifyContent: 'flex-end',
+  },
+
   orTextContainer: {
-    marginVertical: RF(20),
+    // borderWidth: 2,
+    paddingVertical: RF(20),
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
@@ -25,9 +60,26 @@ const styles = StyleSheet.create({
   textStyles: {
     fontSize: RF(14),
     color: colors.BLACK,
+  },
 
-    // fontFamily: FONTS.ProximaNova,
-    // marginBottom:RF(15),
+  socialContainer: {
+    // borderWidth: 2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  signUpTextContainer: {
+    height: RF(60),
+    // borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  signUpTextInnerContainer: {
+    flexDirection: 'row',
+  },
+  createAccountText: {
+    fontSize: RF(12),
+    fontWeight: '600',
   },
 });
 

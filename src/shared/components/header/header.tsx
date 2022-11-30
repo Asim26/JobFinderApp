@@ -30,9 +30,11 @@ const Header = (props: any) => {
         // }}
       >
         {props.leftText !== undefined && (
-            <View style={{height:"100%",justifyContent:"center"}}>
-            <Text style={[styles.text,props.leftTextStyles]}>{props.leftText}</Text>
-            </View>
+          <View style={{height: '100%', justifyContent: 'center'}}>
+            <Text style={[styles.text, props.leftTextStyles]}>
+              {props.leftText}
+            </Text>
+          </View>
         )}
 
         {props.leftIconPath !== undefined && (
@@ -63,9 +65,10 @@ const Header = (props: any) => {
                 ? {
                     height: props.titleLogosize,
                     width: props.titleLogosize,
-                    borderRadius:props.borderRadius || RF(props.titleLogosize/2),
-                    resizeMode:"contain",
-                    marginRight:RF(5)
+                    borderRadius:
+                      props.borderRadius || RF(props.titleLogosize / 2),
+                    resizeMode: 'contain',
+                    marginRight: RF(5),
                   }
                 : {
                     height: RF(15),
@@ -76,18 +79,16 @@ const Header = (props: any) => {
           />
         )}
         {props.title && (
-              <Text
-                  style={[
-                    styles.title,
-                    {
-                      color: props.textColor || colors.BLACK,
-                      fontSize: props.fontSize || RF(17),
-                    },
-                  ]}>
-                {props.title !== undefined ? props.title : 'Header'}
-              </Text>
-
-
+          <Text
+            style={[
+              styles.title,
+              {
+                color: props.textColor || colors.BLACK,
+                fontSize: props.fontSize || RF(17),
+              },
+            ]}>
+            {props.title !== undefined ? props.title : 'Header'}
+          </Text>
         )}
       </View>
       <View style={styles.headerMenu}>
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal:RF(12),
+    // paddingHorizontal:RF(12),
 
     // alignSelf:''
     // borderWidth:1,

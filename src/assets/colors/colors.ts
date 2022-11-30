@@ -36,5 +36,7 @@ const colors = {
 
   //App Theme
   APP_THEME: '#4CA6A8',
+  GOOGLE_BTN_COLOR: '#E9F4FF',
+  FACEBOOK_BTN_COLOR: '#4460A0',
 };
 export default colors;
