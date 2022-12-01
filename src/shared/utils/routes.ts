@@ -17,4 +17,5 @@ export const Routes = {
   UPDATE_PASSWORD: 'updatePassword',
   PRIVACY_POLICY: 'privacyPolicy',
   START_SCREEN: 'startScreen',
+  SEARCH: 'search',
 };

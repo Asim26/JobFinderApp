@@ -24,6 +24,11 @@ const images = {
   email: require('./email.png'),
   eye: require('./eye.png'),
   eyeEnable: require('./eyeEnable.png'),
+  sideDrawerButton: require('./sideDrawerButton.png'),
+  profilePic: require('./profilePic.png'),
+  settingsBtnLogo: require('./settings-btn-logo.png'),
+  heart: require('./heart.png'),
+  editIcon: require('./edit-icon.png'),
 };
 
 export default images;

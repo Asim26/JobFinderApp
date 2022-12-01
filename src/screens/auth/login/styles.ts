@@ -5,7 +5,7 @@ import {RF} from '../../../shared/theme/responsive';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // borderWidth: 2,
+    borderWidth: 2,
     paddingHorizontal: RF(14),
   },
 
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   bodyText: {
     fontSize: RF(15),
-    width: RF(200),
+    width: '70%',
   },
 
   inputContainer: {
@@ -77,6 +77,10 @@ const styles = StyleSheet.create({
   signUpTextInnerContainer: {
     flexDirection: 'row',
   },
+  newUserText: {
+    fontSize: RF(12),
+  },
+
   createAccountText: {
     fontSize: RF(12),
     fontWeight: '600',

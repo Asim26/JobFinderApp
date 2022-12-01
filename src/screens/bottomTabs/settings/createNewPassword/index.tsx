@@ -90,7 +90,7 @@ const NewPassword = ({}) => {
 
                 <Input
                     returnKeyType={'next'}
-                    onSubmitEditing={() => newPassword.current.focus()}
+                    onSubmitEditing={() => newPassword.current?.focus()}
                     value={values.oldPassword}
                     placeholder={'Enter old password'}
                     textContentType={'password'}
@@ -107,7 +107,7 @@ const NewPassword = ({}) => {
                 />
                 <Input
                     returnKeyType={'next'}
-                    onSubmitEditing={() => confirmPassword.current.focus()}
+                    onSubmitEditing={() => confirmPassword?.current?.focus()}
                     value={values.newPassword}
                     placeholder={'New password'}
                     textContentType={'password'}

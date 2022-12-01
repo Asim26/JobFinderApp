@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Wrapper from '../../../shared/components/wrapper';
-import {FlatList, View} from 'react-native';
+import {Alert, FlatList, View} from 'react-native';
 import styles from './styles';
 import images from '../../../assets/images/images';
 import Header from '../../../shared/components/header/header';
@@ -72,9 +72,24 @@ const Settings = () => {
         return navigate(Routes.PRIVACY_POLICY);
         break;
       case 4:
-        return logoutUser();
+        return logoutConfirmation();
     }
   };
+
+  const logoutConfirmation = () =>
+    Alert.alert('Log out', 'Are you sure you want to logout?', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {
+        text: 'Log out',
+        onPress: () => {
+          logoutUser();
+        },
+      },
+    ]);
 
   const logoutUser = async () => {
     dispatch(setUser(null));

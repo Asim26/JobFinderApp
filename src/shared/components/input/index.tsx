@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     height: RF(43),
-    borderRadius: RF(0),
+    borderRadius: RF(10),
     borderWidth: RF(1),
     borderColor: colors.LIGHT_GRAY,
     ...GST.px3,

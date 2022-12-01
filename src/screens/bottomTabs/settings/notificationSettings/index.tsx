@@ -7,31 +7,58 @@ import Header from '../../../../shared/components/header/header';
 import {ScreenTitle} from '../../../../shared/utils/ScreenTitle';
 import RowItem from '../../../../shared/components/rowItem';
 import {navigationRef} from '../../../../shared/services/NavService';
+
 const Settings = () => {
   const [settings, setSettings] = useState([
     {
       id: 0,
-      title: 'Push Notifications',
+      title: 'New Post',
+      subtitle: 'If any new post update',
       image: images.notification,
       value: false,
     },
     {
       id: 1,
-      title: 'Chat Notifications',
+      title: 'Got Hired',
+      subtitle: 'If you get hired at any company',
       image: images.lock,
       value: false,
     },
     {
+      id: 2,
+      title: 'Get Rejected',
+      subtitle: 'If you rejected by any company',
+      image: images.help,
+      value: false,
+    },
+    {
       id: 3,
-      title: 'Email Notifications',
+      title: 'Message',
+      subtitle: 'Got any new message',
+      image: images.help,
+      value: false,
+    },
+    {
+      id: 4,
+      title: 'Call',
+      subtitle: 'Have a call',
+      image: images.help,
+      value: false,
+    },
+    {
+      id: 5,
+      title: 'Dark Mode',
+      subtitle: 'Enable dark theme',
       image: images.help,
       value: false,
     },
   ]);
+
   const renderSettingsItem = (item: any) => {
     return (
       <RowItem
         title={item.title}
+        subtitle={item.subtitle}
         borderBottom
         isSwitch
         onSwitch={value => {

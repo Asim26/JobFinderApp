@@ -19,7 +19,8 @@ import Messages from '../../../screens/bottomTabs/messages';
 import Profile from '../../../screens/bottomTabs/profile';
 import images from '../../../assets/images/images';
 import Settings from '../../../screens/bottomTabs/settings';
-import NotificationSettings from '../../../screens/bottomTabs/settings/notificationSettings'
+import NotificationSettings from '../../../screens/bottomTabs/settings/notificationSettings';
+import Search from '../../../screens/search';
 
 const Tab = createBottomTabNavigator();
 // let notVerified = (user.productId.length === 1 && !user.isAccountVerified )
@@ -54,7 +55,7 @@ function MyTabs() {
                 source={images.glob}
                 style={[
                   tabStyles.iconStyle,
-                  {tintColor: focused ? colors.LIGHT_GREEN : colors.LIGHT_GRAY},
+                  {tintColor: focused ? colors.APP_THEME : colors.LIGHT_GRAY},
                 ]}
               />
             </View>
@@ -80,7 +81,7 @@ function MyTabs() {
                 source={images.message}
                 style={[
                   tabStyles.iconStyle,
-                  {tintColor: focused ? colors.LIGHT_GREEN : colors.LIGHT_GRAY},
+                  {tintColor: focused ? colors.APP_THEME : colors.LIGHT_GRAY},
                 ]}
               />
             </View>
@@ -102,10 +103,10 @@ function MyTabs() {
             <View style={[tabStyles.tabBarItem]}>
               {/*<View style={[tabStyles.topBorStyes, { backgroundColor: focused ? colors.APP_GOLD : "" }]}></View>*/}
               <Image
-                source={images.profile}
+                source={images.settings}
                 style={[
                   tabStyles.iconStyle,
-                  {tintColor: focused ? colors.LIGHT_GREEN : colors.LIGHT_GRAY},
+                  {tintColor: focused ? colors.APP_THEME : colors.LIGHT_GRAY},
                 ]}
               />
             </View>
@@ -127,10 +128,10 @@ function MyTabs() {
             <View style={[tabStyles.tabBarItem]}>
               {/*<View style={[tabStyles.topBorStyes, { backgroundColor: focused ? colors.APP_GOLD : "" }]}></View>*/}
               <Image
-                source={images.profile}
+                source={images.user}
                 style={[
                   tabStyles.iconStyle,
-                  {tintColor: focused ? colors.LIGHT_GREEN : colors.LIGHT_GRAY},
+                  {tintColor: focused ? colors.APP_THEME : colors.LIGHT_GRAY},
                 ]}
               />
             </View>
@@ -151,6 +152,7 @@ const MainStack = () => {
       screenOptions={{headerShown: false}}>
       <Stack.Screen name={Routes.BOTTOM_TABS} component={MyTabs} />
       <Stack.Screen name={Routes.HOME_SCREEN} component={Home} />
+      <Stack.Screen name={Routes.SEARCH} component={Search} />
       <Stack.Screen
         name={Routes.NOTIFICATION_SETTINGS}
         component={NotificationSettings}

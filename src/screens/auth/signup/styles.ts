@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
   },
   bodyText: {
     fontSize: RF(15),
-    width: RF(200),
+    width: '80%',
   },
 
   inputContainer: {
-    height: RF(200),
+    height: RF(220),
     // borderWidth: 2,
     justifyContent: 'flex-end',
   },
@@ -81,6 +81,9 @@ const styles = StyleSheet.create({
   },
   signUpTextInnerContainer: {
     flexDirection: 'row',
+  },
+  alreadyAccountText: {
+    fontSize: RF(12),
   },
   createAccountText: {
     fontSize: RF(12),

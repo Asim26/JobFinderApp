@@ -87,5 +87,8 @@ export const UpdateProfile = Yup.object().shape({
   email: Yup.string()
     .email('Please provide valid email')
     .required('Please enter your email address'),
+  password: Yup.string()
+    .required('No password provided.')
+    .min(8, 'Password is too short - should be 8 chars minimum.'),
   // phone: Yup.string()('Please enter your phone number'),
 });

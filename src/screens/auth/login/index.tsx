@@ -13,13 +13,23 @@ import colors from '../../../assets/colors/colors';
 import SocialButton from '../../../shared/components/socialButton';
 import {navigate} from '../../../shared/services/NavService';
 import {Routes} from '../../../shared/utils/routes';
+import {useDispatch, useSelector} from 'react-redux';
+import {setUser} from '../../../shared/redux/reducers/userReducer';
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const initialValues = {
-    email: '',
-    password: '',
+    email: 'asim@gmail.com',
+    password: '12345678',
   };
-  const submitHandler = values => {};
+  const submitHandler = (values: any) => {
+    let obj = {
+      email: values.email,
+      password: values.password,
+    };
+    dispatch(setUser(obj));
+  };
   const formikRef = useRef();
 
   const email: any = useRef();
@@ -61,7 +71,7 @@ const Login = () => {
                     value={values.email}
                     leftIcon={images.email}
                     placeholder="Email Address"
-                    onSubmitEditing={() => password.current.focus()}
+                    onSubmitEditing={() => password?.current?.focus()}
                     onChangeText={handleChange('email')}
                     error={touched.email && errors.email ? errors.email : ''}
                   />
@@ -94,7 +104,7 @@ const Login = () => {
                     title={'Login'}
                     borderRadius={RF(10)}
                     onPress={() => {
-                      handleSubmit();
+                      handleSubmit(values);
                     }}
                   />
                 </View>
@@ -127,7 +137,7 @@ const Login = () => {
           </View>
           <View style={styles.signUpTextContainer}>
             <View style={styles.signUpTextInnerContainer}>
-              <Text>New User? </Text>
+              <Text style={styles.newUserText}>New User? </Text>
               <TouchableOpacity
                 onPress={() => {
                   navigate(Routes.SIGN_UP);

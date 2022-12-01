@@ -1,9 +1,15 @@
 import React from 'react';
-import {StyleSheet, Image, Pressable, TouchableHighlight} from 'react-native';
+import {
+  StyleSheet,
+  Image,
+  Pressable,
+  TouchableHighlight,
+  View,
+} from 'react-native';
 import colors from '../../../assets/colors/colors';
 import {RF} from '../../theme/responsive';
 
-const SocialButton = props => {
+const AppSmallButton = props => {
   let marginLeft = props.marginLeft ? props.marginLeft : RF(0);
   let marginRight = props.marginRight ? props.marginRight : RF(0);
   let bgColor = props.bgColor ? props.bgColor : colors.BLACK;
@@ -21,21 +27,23 @@ const SocialButton = props => {
         styles.container,
       ]}
       onPress={onPress}>
-      <Image source={props.logo} resizeMode="contain" style={styles.logo} />
+      <View style={{alignItems: 'center'}}>
+        <Image source={props.logo} resizeMode="contain" style={styles.logo} />
+      </View>
     </TouchableHighlight>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: RF(20),
-    paddingVertical: RF(17),
-    borderRadius: RF(20),
+    paddingHorizontal: RF(18),
+    paddingVertical: RF(12),
+    borderRadius: RF(10),
   },
   logo: {
-    width: RF(14),
-    height: RF(22),
+    width: RF(10),
+    height: RF(18),
   },
 });
 
-export default SocialButton;
+export default AppSmallButton;

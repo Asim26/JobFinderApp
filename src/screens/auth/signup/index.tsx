@@ -4,7 +4,11 @@ import Wrapper from '../../../shared/components/wrapper';
 import styles from './styles';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import {Formik} from 'formik';
-import {LoginSchema, SignUpSchema} from '../../../shared/utils/validations';
+import {
+  LoginSchema,
+  SignUPSchema,
+  SignUpSchema,
+} from '../../../shared/utils/validations';
 import {RF} from '../../../shared/theme/responsive';
 import Input from '../../../shared/components/input';
 import images from '../../../assets/images/images';
@@ -55,7 +59,7 @@ const SignUp = () => {
           </View>
           <Formik
             initialValues={initialValues}
-            validationSchema={SignUpSchema}
+            validationSchema={SignUPSchema}
             onSubmit={submitHandler}
             innerRef={formikRef}>
             {({
@@ -73,7 +77,7 @@ const SignUp = () => {
                     value={values.userName}
                     leftIcon={images.user}
                     placeholder="User Name"
-                    onSubmitEditing={() => email.current.focus()}
+                    onSubmitEditing={() => email?.current?.focus()}
                     onChangeText={handleChange('userName')}
                     error={
                       touched.userName && errors.userName ? errors.userName : ''
@@ -84,7 +88,7 @@ const SignUp = () => {
                     value={values.email}
                     leftIcon={images.email}
                     placeholder="Email Address"
-                    onSubmitEditing={() => password.current.focus()}
+                    onSubmitEditing={() => password?.current?.focus()}
                     onChangeText={handleChange('email')}
                     error={touched.email && errors.email ? errors.email : ''}
                   />
@@ -150,7 +154,9 @@ const SignUp = () => {
           </View>
           <View style={styles.signUpTextContainer}>
             <View style={styles.signUpTextInnerContainer}>
-              <Text>Already Have Account? </Text>
+              <Text style={styles.alreadyAccountText}>
+                Already Have Account?
+              </Text>
               <TouchableOpacity
                 onPress={() => {
                   navigate(Routes.LOGIN);

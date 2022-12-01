@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flex: 0.08,
+    paddingHorizontal: RF(20),
   },
   characterContainer: {
     flex: 0.55,
