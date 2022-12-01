@@ -5,7 +5,7 @@ import {RF} from '../../../shared/theme/responsive';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderWidth: 2,
+    // borderWidth: 2,
     paddingHorizontal: RF(14),
   },
 

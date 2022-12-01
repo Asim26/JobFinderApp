@@ -103,7 +103,7 @@ function MyTabs() {
             <View style={[tabStyles.tabBarItem]}>
               {/*<View style={[tabStyles.topBorStyes, { backgroundColor: focused ? colors.APP_GOLD : "" }]}></View>*/}
               <Image
-                source={images.settings}
+                source={images.user}
                 style={[
                   tabStyles.iconStyle,
                   {tintColor: focused ? colors.APP_THEME : colors.LIGHT_GRAY},
@@ -128,7 +128,7 @@ function MyTabs() {
             <View style={[tabStyles.tabBarItem]}>
               {/*<View style={[tabStyles.topBorStyes, { backgroundColor: focused ? colors.APP_GOLD : "" }]}></View>*/}
               <Image
-                source={images.user}
+                source={images.settings}
                 style={[
                   tabStyles.iconStyle,
                   {tintColor: focused ? colors.APP_THEME : colors.LIGHT_GRAY},

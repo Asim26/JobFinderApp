@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: RF(20),
     paddingVertical: RF(17),
     borderRadius: RF(20),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   logo: {
     width: RF(14),

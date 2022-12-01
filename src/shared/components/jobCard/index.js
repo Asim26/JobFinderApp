@@ -47,7 +47,7 @@ const JobCard = props => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: RF(160),
+    height: RF(175),
     // borderWidth: 2,
     backgroundColor: colors.WHITE,
     width: RF(290),
