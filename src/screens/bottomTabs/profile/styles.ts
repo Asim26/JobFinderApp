@@ -15,17 +15,40 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
   },
 
+  profilePicContainer: {
+    height: RF(120),
+    justifyContent: 'center',
+    alignItems: 'center',
+    // borderWidth:2
+  },
+  profilePic: {
+    width: RF(120),
+    height: RF(120),
+    borderRadius: RF(60),
+    resizeMode: 'cover',
+  },
+  pickerContainer: {
+    width: RF(35),
+    height: RF(35),
+    position: 'absolute',
+    bottom: RF(5),
+    right: RF(110),
+    zIndex: 1,
+  },
+  editIcon: {
+    width: RF(30),
+    height: RF(30),
+  },
+
   textContainer: {
     // borderWidth: 2,
     alignItems: 'center',
-    paddingVertical: RF(10),
   },
 
   profilePic: {
     width: RF(100),
     height: RF(100),
     borderRadius: RF(50),
-    marginBottom: RF(10),
   },
 
   userNameText: {

@@ -25,7 +25,7 @@ const MessageItem =(props:MessageProps)=> {
             onPress={props?.onPress}
             style={styles.profileContainer}>
             <View style={styles.profileIconContainer}>
-                <FastImage source={props?.image} style={styles.profileStyles}/>
+                <Image source={props?.userImage} style={styles.profileStyles}/>
             </View>
             <View style={styles.profileDetailsContainer}>
                 <Text style={[styles.contentTitle,{fontSize: RF(14),fontFamily: FONTS.MilliardMedium,color: colors.BLACK, marginBottom:RF(4)}]}>{props?.name}</Text>
@@ -33,7 +33,7 @@ const MessageItem =(props:MessageProps)=> {
             </View>
             <View style={styles.timeContainer}>
                 <Text style={[styles.contentTitle,{fontSize: RF(12),fontFamily: FONTS.ProximaNova,color: colors.GRAY_SCALE}]}>{props?.time}</Text>
-                {props?.unread && <View style={styles.onlineIcon}></View>}
+                {props?.unread && <View style={styles.onlineIcon}><Text>33333333333</Text></View>}
             </View>
         </TouchableOpacity>
     );

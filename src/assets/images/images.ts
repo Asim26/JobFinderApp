@@ -29,6 +29,8 @@ const images = {
   settingsBtnLogo: require('./settings-btn-logo.png'),
   heart: require('./heart.png'),
   editIcon: require('./edit-icon.png'),
+  userImage: require('./userImage.png'),
+  chat: require('./chat.png'),
 };
 
 export default images;

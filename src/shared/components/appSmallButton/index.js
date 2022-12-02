@@ -5,6 +5,7 @@ import {
   Pressable,
   TouchableHighlight,
   View,
+  TouchableOpacity,
 } from 'react-native';
 import colors from '../../../assets/colors/colors';
 import {RF} from '../../theme/responsive';
@@ -17,7 +18,7 @@ const AppSmallButton = props => {
   let {onPress} = props;
 
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       style={[
         {
           marginLeft: marginLeft,
@@ -30,7 +31,7 @@ const AppSmallButton = props => {
       <View style={{alignItems: 'center'}}>
         <Image source={props.logo} resizeMode="contain" style={styles.logo} />
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 
@@ -39,10 +40,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: RF(18),
     paddingVertical: RF(12),
     borderRadius: RF(10),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   logo: {
-    width: RF(10),
-    height: RF(18),
+    width: RF(14),
+    height: RF(20),
   },
 });
 

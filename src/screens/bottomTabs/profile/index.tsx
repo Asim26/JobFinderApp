@@ -1,6 +1,6 @@
 import {Formik} from 'formik';
 import React, {useRef} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
 import images from '../../../assets/images/images';
 import Button from '../../../shared/components/button/button';
 import Header from '../../../shared/components/header/header';
@@ -38,9 +38,17 @@ const Profile = () => {
               }}
             />
           </View>
+          <View style={styles.profilePicContainer}>
+            <Image source={images.profilePic} style={styles.profilePic} />
+            <View style={styles.pickerContainer}>
+              <Pressable onPress={() => {}}>
+                <Image source={images.editIcon} style={styles.editIcon} />
+              </Pressable>
+            </View>
+          </View>
+
           <View style={styles.textContainer}>
             <View style={{alignItems: 'center'}}>
-              <Image source={images.profilePic} style={styles.profilePic} />
               <Text style={styles.userNameText}>Adom Shafi</Text>
               <Text>Edit Profile</Text>
             </View>

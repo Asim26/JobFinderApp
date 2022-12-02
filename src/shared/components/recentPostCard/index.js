@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: RF(6),
     // borderWidth: 2,
     // backgroundColor: 'green',
-    width: RF(300),
+    width: RF(310),
     paddingHorizontal: RF(10),
     marginBottom: RF(10),
     justifyContent: 'center',

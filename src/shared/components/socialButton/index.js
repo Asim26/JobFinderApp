@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Image, Pressable, TouchableHighlight} from 'react-native';
+import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import colors from '../../../assets/colors/colors';
 import {RF} from '../../theme/responsive';
 
@@ -11,7 +11,7 @@ const SocialButton = props => {
   let {onPress} = props;
 
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       style={[
         {
           marginLeft: marginLeft,
@@ -22,7 +22,7 @@ const SocialButton = props => {
       ]}
       onPress={onPress}>
       <Image source={props.logo} resizeMode="contain" style={styles.logo} />
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 

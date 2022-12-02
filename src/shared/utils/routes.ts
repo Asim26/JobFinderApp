@@ -18,4 +18,5 @@ export const Routes = {
   PRIVACY_POLICY: 'privacyPolicy',
   START_SCREEN: 'startScreen',
   SEARCH: 'search',
+  APPLICATIONS: 'applications',
 };
