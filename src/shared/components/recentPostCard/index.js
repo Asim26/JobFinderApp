@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
     // backgroundColor: 'green',
     width: RF(310),
-    paddingHorizontal: RF(10),
+    paddingHorizontal: RF(15),
     marginBottom: RF(10),
     marginLeft: RF(2),
     justifyContent: 'center',
@@ -62,12 +62,12 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     width: '20%',
-    paddingHorizontal: RF(10),
+    // paddingHorizontal: RF(10),
   },
   textContainer: {
     width: '60%',
     justifyContent: 'center',
-    paddingLeft: RF(5),
+    // paddingLeft: RF(5),
   },
   textHeading: {
     fontSize: RF(16),

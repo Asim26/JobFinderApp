@@ -11,8 +11,11 @@ import {navigate} from '../../../shared/services/NavService';
 import {RF} from '../../../shared/theme/responsive';
 import {Routes} from '../../../shared/utils/routes';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
+  const navigation:any = useNavigation();
+
   const [jobs, setJobs] = useState([
     {
       id: 1,
@@ -89,7 +92,9 @@ const Home = () => {
             <AppSmallButton
               bgColor={colors.APP_THEME}
               logo={images.sideDrawerButton}
-              onPress={() => {}}
+              onPress={() => {
+                navigation.openDrawer();
+              }}
             />
           </View>
           <View>

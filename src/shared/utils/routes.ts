@@ -19,4 +19,6 @@ export const Routes = {
   START_SCREEN: 'startScreen',
   SEARCH: 'search',
   APPLICATIONS: 'applications',
+  DRAWER: 'drawer',
+  LOGOUT: 'logout',
 };

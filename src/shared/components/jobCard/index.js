@@ -47,7 +47,7 @@ const JobCard = props => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: RF(175),
+    height: RF(170),
     // borderWidth: 2,
     backgroundColor: colors.WHITE,
     width: RF(290),
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   textContainer: {
-    paddingVertical: RF(10),
+    // borderWidth: 2,
+    paddingVertical: RF(15),
   },
   row: {
     flexDirection: 'row',
