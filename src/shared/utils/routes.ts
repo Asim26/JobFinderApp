@@ -18,7 +18,9 @@ export const Routes = {
   PRIVACY_POLICY: 'privacyPolicy',
   START_SCREEN: 'startScreen',
   SEARCH: 'search',
+  EDIT_PROFILE: 'editProfile',
   APPLICATIONS: 'applications',
+  JOB_APPLY_SCREEN: 'jobApplyScreen',
   DRAWER: 'drawer',
   LOGOUT: 'logout',
 };

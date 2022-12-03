@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
   logoRowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: RF(10),
+    paddingVertical: RF(18),
+    // borderWidth:2
   },
   likeContainer: {
     justifyContent: 'center',
@@ -81,8 +82,9 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   textContainer: {
+    height: RF(70),
     // borderWidth: 2,
-    paddingVertical: RF(15),
+    justifyContent: 'flex-end',
   },
   row: {
     flexDirection: 'row',

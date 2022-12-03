@@ -45,9 +45,8 @@ const ApplicationsCard = props => {
           flexDirection: 'row',
           justifyContent: 'space-around',
           alignItems: 'center',
-          paddingVertical: RF(5),
           paddingHorizontal: RF(18),
-          //   borderWidth: 2,
+          // borderWidth: 2,
         }}>
         <View>
           <Button
@@ -78,14 +77,15 @@ const ApplicationsCard = props => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: RF(125),
+    height: RF(128),
     borderRadius: RF(6),
     // borderWidth: 2,
     // backgroundColor: 'green',
     width: RF(310),
     paddingHorizontal: RF(10),
-    paddingVertical: RF(10),
-    marginBottom: RF(10),
+    // paddingVertical: RF(4),
+    marginTop: RF(4),
+    marginBottom: RF(4),
     marginLeft: RF(2),
     justifyContent: 'center',
 

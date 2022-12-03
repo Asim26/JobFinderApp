@@ -38,18 +38,18 @@ const AppSmallButton = props => {
 const styles = StyleSheet.create({
   container: {
     // backgroundColor: 'green',
-    width: RF(45),
-    height: RF(45),
+    width: RF(42),
+    height: RF(42),
     borderRadius: RF(10),
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: RF(22),
-    paddingVertical: RF(22),
+    // paddingHorizontal: RF(22),
+    // paddingVertical: RF(22),
     borderRadius: RF(11),
   },
   logo: {
-    Width: RF(16),
-    height: RF(16),
+    Width: RF(13),
+    height: RF(13),
   },
 });
 

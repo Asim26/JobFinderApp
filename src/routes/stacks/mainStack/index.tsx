@@ -30,6 +30,9 @@ import {store} from '../../../shared/redux/store';
 import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
 import styles from './drawerStyles';
 
+import JobApplyScreen from '../../../screens/jobApplyScreen';
+import EditProfile from '../../../screens/editProfile';
+
 const logoutConfirmation = () =>
   Alert.alert('Log out', 'Are you sure you want to logout?', [
     {
@@ -187,10 +190,9 @@ const MainStack = () => {
         name={Routes.NOTIFICATION_SETTINGS}
         component={NotificationSettings}
       />
-      <Stack.Screen
-        name={Routes.APPLICATIONS}
-        component={Applications}
-      />
+      <Stack.Screen name={Routes.APPLICATIONS} component={Applications} />
+      <Stack.Screen name={Routes.JOB_APPLY_SCREEN} component={JobApplyScreen} />
+      <Stack.Screen name={Routes.EDIT_PROFILE} component={EditProfile} />
     </Stack.Navigator>
   );
 };
@@ -224,7 +226,7 @@ function CustomDrawerContent(props: any) {
           label={() => (
             <Text style={styles.drawerItemLabelText}>{'Edit Prodile'}</Text>
           )}
-          onPress={() => props.navigation.navigate(Routes.PROFILE)}
+          onPress={() => props.navigation.navigate(Routes.EDIT_PROFILE)}
         />
         <DrawerItem
           style={{borderBottomWidth: RF(1)}}
@@ -249,7 +251,9 @@ function CustomDrawerContent(props: any) {
           label={() => (
             <Text style={styles.drawerItemLabelText}>{'LogOut'}</Text>
           )}
-          onPress={() => {logoutConfirmation()}}
+          onPress={() => {
+            logoutConfirmation();
+          }}
         />
       </View>
     </View>

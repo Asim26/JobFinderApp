@@ -14,7 +14,7 @@ import Header from '../../shared/components/header/header';
 import Input from '../../shared/components/input';
 import RecentPostCard from '../../shared/components/recentPostCard';
 import Wrapper from '../../shared/components/wrapper';
-import {navigationRef} from '../../shared/services/NavService';
+import {navigate, navigationRef} from '../../shared/services/NavService';
 import {hp, RF} from '../../shared/theme/responsive';
 import Button from '../../shared/components/button/button';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
@@ -22,6 +22,7 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import SocialButton from '../../shared/components/socialButton';
 import {SelectList} from 'react-native-dropdown-select-list';
 import styles from './styles';
+import {Routes} from '../../shared/utils/routes';
 
 const Search = () => {
   const filterSheetRef = useRef<any>();
@@ -497,6 +498,9 @@ const Search = () => {
                     borderRadius={RF(10)}
                     width={'75%'}
                     height={RF(40)}
+                    onPress={() => {
+                      navigate(Routes.JOB_APPLY_SCREEN);
+                    }}
                   />
                   <AppSmallButton
                     logo={images.chat}
