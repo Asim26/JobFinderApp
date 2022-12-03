@@ -19,8 +19,9 @@ import {hp, RF} from '../../shared/theme/responsive';
 import Button from '../../shared/components/button/button';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import styles from './styles';
 import SocialButton from '../../shared/components/socialButton';
+import {SelectList} from 'react-native-dropdown-select-list';
+import styles from './styles';
 
 const Search = () => {
   const filterSheetRef = useRef<any>();
@@ -104,6 +105,16 @@ const Search = () => {
     },
   ]);
 
+  const [selectedCategory, setSelectedCategory] = React.useState('');
+
+  const categoriesOptions = [
+    {key: '1', value: 'UI/UX Designer'},
+    {key: '2', value: 'Web developer'},
+    {key: '3', value: 'Content Writer'},
+    {key: '4', value: 'Business developer'},
+    {key: '5', value: 'Js Developer'},
+  ];
+
   const recentPostsItem = (item: any) => {
     return (
       <RecentPostCard
@@ -119,77 +130,40 @@ const Search = () => {
   const renderFilterSheetContent = () => {
     return (
       <>
-        <View style={{flex: 1}}>
-          <View style={{flex: 0.6, marginHorizontal: RF(10)}}>
-            <View style={{borderRadius: RF(40), backgroundColor: colors.WHITE}}>
+        <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+          <View style={{flex: 1}}>
+            <View style={{flex: 0.6, marginHorizontal: RF(10)}}>
               <View
-                style={{
-                  height: RF(550),
-                  borderBottomWidth: RF(0.5),
-                  borderBottomColor: colors.LIGHT_GRAY,
-                  marginTop: RF(40),
-                  paddingBottom: RF(140),
-                  paddingHorizontal: RF(20),
-                }}>
+                style={{borderRadius: RF(40), backgroundColor: colors.WHITE}}>
                 <View
                   style={{
-                    justifyContent: 'flex-start',
-                    paddingVertical: RF(10),
-                    // borderWidth: 2,
-                  }}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      fontSize: RF(16),
-                      fontWeight: '700',
-                      color: colors.BLACK,
-                    }}>
-                    {'Set Filters'}
-                  </Text>
-                </View>
-                <View
-                  style={{
-                    justifyContent: 'flex-start',
-                    // borderWidth: 2,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: RF(16),
-                      fontWeight: '700',
-                      color: colors.BLACK,
-                      marginBottom: RF(2),
-                    }}>
-                    {'Category'}
-                  </Text>
-                  <Input placeholder="UI/UX Design" />
-                </View>
-                <View
-                  style={{
-                    justifyContent: 'flex-start',
-                    // borderWidth: 2,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: RF(16),
-                      fontWeight: '700',
-                      color: colors.BLACK,
-                      marginBottom: RF(2),
-                    }}>
-                    {'Sub Category'}
-                  </Text>
-                  <Input placeholder="Graphic Design" />
-                </View>
-
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
+                    height: RF(550),
+                    borderBottomWidth: RF(0.5),
+                    borderBottomColor: colors.LIGHT_GRAY,
+                    marginTop: RF(40),
+                    paddingBottom: RF(140),
+                    paddingHorizontal: RF(20),
                   }}>
                   <View
                     style={{
                       justifyContent: 'flex-start',
+                      paddingVertical: RF(10),
                       // borderWidth: 2,
-                      width: '48%',
+                    }}>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        fontSize: RF(16),
+                        fontWeight: '700',
+                        color: colors.BLACK,
+                      }}>
+                      {'Set Filters'}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      justifyContent: 'flex-start',
+                      // borderWidth: 2,
                     }}>
                     <Text
                       style={{
@@ -198,15 +172,27 @@ const Search = () => {
                         color: colors.BLACK,
                         marginBottom: RF(2),
                       }}>
-                      {'Location'}
+                      {'Category'}
                     </Text>
-                    <Input placeholder="Canada" />
+                    <SelectList
+                      setSelected={(val: any) => setSelectedCategory(val)}
+                      data={categoriesOptions}
+                      save="value"
+                      placeholder="Choose Category"
+                      searchPlaceholder="Pick one"
+                      boxStyles={{
+                        marginTop: RF(10),
+                        marginBottom: RF(10),
+                      }}
+                      dropdownStyles={{
+                        marginBottom: RF(10),
+                      }}
+                    />
                   </View>
                   <View
                     style={{
                       justifyContent: 'flex-start',
                       // borderWidth: 2,
-                      width: '48%',
                     }}>
                     <Text
                       style={{
@@ -215,80 +201,121 @@ const Search = () => {
                         color: colors.BLACK,
                         marginBottom: RF(2),
                       }}>
-                      {'Salary'}
+                      {'Sub Category'}
                     </Text>
-                    <Input placeholder="$5K" />
+                    <Input placeholder="Graphic Design" />
                   </View>
-                </View>
 
-                <View
-                  style={{
-                    justifyContent: 'flex-start',
-                    // borderWidth: 2,
-                  }}>
-                  <Text
+                  <View
                     style={{
-                      fontSize: RF(16),
-                      fontWeight: '700',
-                      color: colors.BLACK,
-                      marginBottom: RF(2),
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
                     }}>
-                    {'Job Type'}
-                  </Text>
-                  <View style={{flexDirection: 'row'}}>
-                    <Button
-                      title={'Full Time'}
-                      width={'33%'}
-                      borderRadius={RF(10)}
-                    />
-                    <Button
-                      title={'Part Time'}
-                      width={'34%'}
-                      borderRadius={RF(10)}
-                    />
-                    <Button
-                      title={'Contract'}
-                      width={'33%'}
-                      borderRadius={RF(10)}
-                    />
+                    <View
+                      style={{
+                        justifyContent: 'flex-start',
+                        // borderWidth: 2,
+                        width: '48%',
+                      }}>
+                      <Text
+                        style={{
+                          fontSize: RF(16),
+                          fontWeight: '700',
+                          color: colors.BLACK,
+                          marginBottom: RF(2),
+                        }}>
+                        {'Location'}
+                      </Text>
+                      <Input placeholder="Canada" />
+                    </View>
+                    <View
+                      style={{
+                        justifyContent: 'flex-start',
+                        // borderWidth: 2,
+                        width: '48%',
+                      }}>
+                      <Text
+                        style={{
+                          fontSize: RF(16),
+                          fontWeight: '700',
+                          color: colors.BLACK,
+                          marginBottom: RF(2),
+                        }}>
+                        {'Salary'}
+                      </Text>
+                      <Input placeholder="$5K" />
+                    </View>
                   </View>
-                  <View style={{flexDirection: 'row'}}>
-                    <Button
-                      title={'Freelance'}
-                      width={'33%'}
-                      borderRadius={RF(10)}
-                    />
-                    <Button
-                      title={'Remote'}
-                      width={'34%'}
-                      borderRadius={RF(10)}
-                    />
-                    <Button
-                      title={'All Types'}
-                      width={'33%'}
-                      borderRadius={RF(10)}
-                    />
-                  </View>
-                </View>
 
-                <View
-                  style={{
-                    justifyContent: 'flex-start',
-                    // borderWidth: 2,
-                    paddingVertical: RF(10),
-                  }}>
-                  <Button
-                    title={'Apply Filters'}
-                    borderRadius={RF(10)}
-                    onPress={() => {
-                      openJobDetailBottomSheet();
-                    }}
-                  />
+                  <View
+                    style={{
+                      justifyContent: 'flex-start',
+                      // borderWidth: 2,
+                    }}>
+                    <Text
+                      style={{
+                        fontSize: RF(16),
+                        fontWeight: '700',
+                        color: colors.BLACK,
+                        marginBottom: RF(2),
+                      }}>
+                      {'Job Type'}
+                    </Text>
+                    <View style={{flexDirection: 'row'}}>
+                      <Button
+                        title={'Full Time'}
+                        width={'33%'}
+                        borderRadius={RF(10)}
+                      />
+                      <Button
+                        title={'Part Time'}
+                        width={'34%'}
+                        borderRadius={RF(10)}
+                      />
+                      <Button
+                        title={'Contract'}
+                        width={'33%'}
+                        borderRadius={RF(10)}
+                      />
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <Button
+                        title={'Freelance'}
+                        width={'33%'}
+                        borderRadius={RF(10)}
+                      />
+                      <Button
+                        title={'Remote'}
+                        width={'34%'}
+                        borderRadius={RF(10)}
+                      />
+                      <Button
+                        title={'All Types'}
+                        width={'33%'}
+                        borderRadius={RF(10)}
+                      />
+                    </View>
+                  </View>
+
+                  <View
+                    style={{
+                      justifyContent: 'flex-start',
+                      // borderWidth: 2,
+                      paddingVertical: RF(10),
+                    }}>
+                    <Button
+                      title={'Apply Filters'}
+                      borderRadius={RF(10)}
+                      onPress={() => {
+                        openJobDetailBottomSheet();
+                      }}
+                    />
+                  </View>
                 </View>
               </View>
             </View>
           </View>
-        </View>
+        </KeyboardAwareScrollView>
       </>
     );
   };
@@ -500,19 +527,17 @@ const Search = () => {
           </View>
 
           <View style={styles.secondRow}>
-            <View style={styles.searchContainer}>
-              <Input placeholder="UI Design" />
+            <View style={{width: '80%'}}>
+              <Input placeholder="UI Design" containerStyle={{}} />
             </View>
 
-            <View>
-              <AppSmallButton
-                bgColor={colors.APP_THEME}
-                logo={images.settingsBtnLogo}
-                onPress={() => {
-                  openFilterBottomSheet();
-                }}
-              />
-            </View>
+            <AppSmallButton
+              bgColor={colors.APP_THEME}
+              logo={images.settingsBtnLogo}
+              onPress={() => {
+                openFilterBottomSheet();
+              }}
+            />
           </View>
 
           <View style={styles.thirdRow}>

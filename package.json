@@ -25,6 +25,7 @@
     "react-native-calendar-range-picker": "^1.5.3",
     "react-native-config": "^1.4.11",
     "react-native-create-thumbnail": "^1.6.3",
+    "react-native-dropdown-select-list": "^2.0.2",
     "react-native-elements": "^3.4.2",
     "react-native-fast-image": "^8.6.3",
     "react-native-geocoding": "^0.5.0",
@@ -43,7 +44,6 @@
     "react-native-svg": "^13.6.0",
     "react-native-swiper": "^1.6.0",
     "react-native-toast-message": "^2.1.5",
-    "react-native-unordered-list": "^1.0.4",
     "react-redux": "^8.0.5",
     "redux-persist": "^6.0.0",
     "yup": "^0.32.11"

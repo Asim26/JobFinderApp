@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     width: RF(310),
     paddingHorizontal: RF(10),
     marginBottom: RF(10),
+    marginLeft: RF(2),
     justifyContent: 'center',
 
     backgroundColor: colors.WHITE,
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
   textContainer: {
     width: '60%',
     justifyContent: 'center',
+    paddingLeft: RF(5),
   },
   textHeading: {
     fontSize: RF(16),

@@ -21,6 +21,7 @@ import images from '../../../assets/images/images';
 import Settings from '../../../screens/bottomTabs/settings';
 import NotificationSettings from '../../../screens/bottomTabs/settings/notificationSettings';
 import Search from '../../../screens/search';
+import Applications from '../../../screens/applications';
 
 const Tab = createBottomTabNavigator();
 // let notVerified = (user.productId.length === 1 && !user.isAccountVerified )
@@ -116,6 +117,31 @@ function MyTabs() {
       <Tab.Screen
         name={Routes.SETTINGS}
         component={Settings}
+        options={{
+          tabBarLabel: ScreenTitle.SETTINGS,
+          tabBarLabelStyle: {
+            // fontFamily: FONTS.MilliardMedium,
+            fontWeight: '600',
+            fontSize: RF(10),
+            paddingBottom: Platform.OS === 'android' ? RF(5) : null,
+          },
+          tabBarIcon: ({focused, color, size}) => (
+            <View style={[tabStyles.tabBarItem]}>
+              {/*<View style={[tabStyles.topBorStyes, { backgroundColor: focused ? colors.APP_GOLD : "" }]}></View>*/}
+              <Image
+                source={images.settings}
+                style={[
+                  tabStyles.iconStyle,
+                  {tintColor: focused ? colors.APP_THEME : colors.LIGHT_GRAY},
+                ]}
+              />
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={Routes.APPLICATIONS}
+        component={Applications}
         options={{
           tabBarLabel: ScreenTitle.SETTINGS,
           tabBarLabelStyle: {

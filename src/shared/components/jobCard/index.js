@@ -2,8 +2,8 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {RF} from '../../../shared/theme/responsive';
 import colors from '../../../assets/colors/colors';
-import SocialButton from '../../../shared/components/socialButton';
 import images from '../../../assets/images/images';
+import AppSmallButton from '../appSmallButton';
 
 const JobCard = props => {
   let {companyName, companyLogo, jobTitle, budget, location} = props;
@@ -13,7 +13,7 @@ const JobCard = props => {
       <View style={styles.mainContainer}>
         <View style={styles.logoRowContainer}>
           <View>
-            <SocialButton
+            <AppSmallButton
               logo={images.google}
               bgColor={colors.GOOGLE_BTN_COLOR}
             />

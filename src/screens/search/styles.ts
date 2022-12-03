@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
 
   searchContainer: {
-    width: '80%',
+    // width: '80%',
   },
   searchButton: {
     width: '82%',

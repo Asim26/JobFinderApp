@@ -31,6 +31,7 @@ const images = {
   editIcon: require('./edit-icon.png'),
   userImage: require('./userImage.png'),
   chat: require('./chat.png'),
+  more: require('./more.png'),
 };
 
 export default images;
