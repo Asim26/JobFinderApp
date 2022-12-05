@@ -12,6 +12,7 @@ const images = {
   notification: require('./notification.png'),
   rightArrow: require('./rightArrow.png'),
   search: require('./search.png'),
+  searchIcon: require('./search-2.png'),
   sendIcon: require('./sendIcon.png'),
   help: require('./help.png'),
   document: require('./document.png'),
@@ -34,6 +35,8 @@ const images = {
   more: require('./more.png'),
   camera: require('./camera.png'),
   gallery: require('./gallery.png'),
+  addAttachment: require('./addAttachment.png'),
+  call: require('./call.png'),
 };
 
 export default images;

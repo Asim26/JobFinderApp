@@ -107,8 +107,9 @@ const Profile = () => {
                     title={'Save Now'}
                     borderRadius={RF(10)}
                     onPress={() => {
-                      handleSubmit(values);
+                      // handleSubmit(values);
                     }}
+                    isDisabled={true}
                   />
                 </View>
               </>

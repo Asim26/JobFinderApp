@@ -33,11 +33,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   onlineIcon: {
-    height: RF(5),
-    width: RF(5),
-    borderRadius: RF(2.5),
+    height: RF(10),
+    width: RF(10),
+    borderRadius: RF(5),
     marginTop: RF(5),
-    backgroundColor: colors.APP_GOLD,
+    backgroundColor: colors.APP_THEME,
   },
 });
 

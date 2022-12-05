@@ -32,9 +32,7 @@ import styles from './drawerStyles';
 
 import JobApplyScreen from '../../../screens/jobApplyScreen';
 import EditProfile from '../../../screens/editProfile';
-
-import Animated from 'react-native-reanimated';
-import LinearGradient from 'react-native-linear-gradient';
+import Conversation from '../../../screens/conversation';
 
 const logoutConfirmation = () =>
   Alert.alert('Log out', 'Are you sure you want to logout?', [
@@ -196,6 +194,7 @@ const MainStack = () => {
       <Stack.Screen name={Routes.APPLICATIONS} component={Applications} />
       <Stack.Screen name={Routes.JOB_APPLY_SCREEN} component={JobApplyScreen} />
       <Stack.Screen name={Routes.EDIT_PROFILE} component={EditProfile} />
+      <Stack.Screen name={Routes.CONVERSATION} component={Conversation} />
     </Stack.Navigator>
   );
 };

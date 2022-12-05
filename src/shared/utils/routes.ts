@@ -23,4 +23,5 @@ export const Routes = {
   JOB_APPLY_SCREEN: 'jobApplyScreen',
   DRAWER: 'drawer',
   LOGOUT: 'logout',
+  CONVERSATION: 'conversation',
 };
