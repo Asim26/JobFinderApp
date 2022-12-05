@@ -251,6 +251,13 @@ function CustomDrawerContent(props: any) {
         <DrawerItem
           style={{borderBottomWidth: RF(1)}}
           label={() => (
+            <Text style={styles.drawerItemLabelText}>{'Job Form'}</Text>
+          )}
+          onPress={() => props.navigation.navigate(Routes.JOB_APPLY_SCREEN)}
+        />
+        <DrawerItem
+          style={{borderBottomWidth: RF(1)}}
+          label={() => (
             <Text style={styles.drawerItemLabelText}>{'LogOut'}</Text>
           )}
           onPress={() => {

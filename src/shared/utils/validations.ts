@@ -23,6 +23,14 @@ export const SignUPSchema = Yup.object().shape({
     ),
 });
 
+export const jobApplicationSchema = Yup.object().shape({
+  firstName: Yup.string().required('User Name Required'),
+  lastName: Yup.string().required('User Name Required'),
+  email: Yup.string().email('Invalid Email Address').required('Email Required'),
+  country: Yup.string().required('Country Name Required'),
+  message: Yup.string().required('Message Required'),
+});
+
 export const ResetPasswordSchema = Yup.object().shape({
   password: Yup.string()
     .required('Password Required')
