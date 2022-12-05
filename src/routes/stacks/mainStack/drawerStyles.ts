@@ -67,5 +67,40 @@ let styles = {
     backgroundColor: 'rgba(255,255,255,0.2)',
     justifyContent: 'center',
   },
+  //
+  scene: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.0,
+
+    elevation: 24,
+    backgroundColor: 'transparent',
+  },
+  stack: {
+    flex: 1,
+    shadowColor: '#FFF',
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity: 0.44,
+    shadowRadius: 10.32,
+    elevation: 5,
+    overflow: 'hidden',
+  },
+  drawerStyles: {flex: 1, width: '50%', backgroundColor: 'transparent'},
+  menu: {
+    width: 38,
+    height: 38,
+    margin: 20,
+  },
+  drawerLblStyle: {
+    fontWeight: '500',
+    fontSize: 20,
+  },
 };
 export default styles;

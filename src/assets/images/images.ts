@@ -32,6 +32,8 @@ const images = {
   userImage: require('./userImage.png'),
   chat: require('./chat.png'),
   more: require('./more.png'),
+  camera: require('./camera.png'),
+  gallery: require('./gallery.png'),
 };
 
 export default images;

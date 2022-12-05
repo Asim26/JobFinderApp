@@ -33,6 +33,9 @@ import styles from './drawerStyles';
 import JobApplyScreen from '../../../screens/jobApplyScreen';
 import EditProfile from '../../../screens/editProfile';
 
+import Animated from 'react-native-reanimated';
+import LinearGradient from 'react-native-linear-gradient';
+
 const logoutConfirmation = () =>
   Alert.alert('Log out', 'Are you sure you want to logout?', [
     {
@@ -224,7 +227,7 @@ function CustomDrawerContent(props: any) {
         <DrawerItem
           style={{borderBottomWidth: RF(1)}}
           label={() => (
-            <Text style={styles.drawerItemLabelText}>{'Edit Prodile'}</Text>
+            <Text style={styles.drawerItemLabelText}>{'Edit Profile'}</Text>
           )}
           onPress={() => props.navigation.navigate(Routes.EDIT_PROFILE)}
         />
