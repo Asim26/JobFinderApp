@@ -1,5 +1,5 @@
 import React, {Component, useRef, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import images from '../../assets/images/images';
 import Header from '../../shared/components/header/header';
 import Wrapper from '../../shared/components/wrapper';
@@ -13,9 +13,50 @@ import Input from '../../shared/components/input';
 import {SelectList} from 'react-native-dropdown-select-list';
 import Button from '../../shared/components/button/button';
 import styles from './styles';
+import DocumentPicker from 'react-native-document-picker';
+import RNFetchBlob from 'rn-fetch-blob';
 
 const JobApplyScreen = () => {
   const dispatch = useDispatch();
+
+  const [selectedFile, setSelectedFile] = useState<any>('');
+
+  const docxupload = async () => {
+    try {
+      const res = await DocumentPicker.pick({
+        type: [DocumentPicker?.types.allFiles],
+      });
+      console.log('Document response ====>>>>', res);
+
+      let fileName = res[0]?.name;
+      let fileType = res[0]?.type;
+      let fileUri = RNFetchBlob.wrap(
+        decodeURIComponent(res[0]?.uri?.toString().replace('file://', '')),
+      );
+
+      const params: any = [
+        {
+          name: fileName,
+          filename: fileName,
+          type: fileType,
+          data: fileUri,
+        },
+        {
+          name: 'ext',
+          data: `${fileType}`,
+        },
+      ];
+
+      setSelectedFile(fileName);
+      console.log('params...', params);
+    } catch (err) {
+      if (DocumentPicker.isCancel(err)) {
+        // User cancelled the picker, exit any dialogs or menus and move on
+      } else {
+        console.log(err);
+      }
+    }
+  };
 
   const countryOptions = [
     {key: '1', value: 'Pakistan'},
@@ -170,13 +211,31 @@ const JobApplyScreen = () => {
                   <View style={styles.fifthRow}>
                     <View style={{width: '95%'}}>
                       <Text style={{}}>Your CV</Text>
-                      <Input
+                      {/* <Input
                         returnKeyType={'next'}
                         value={values.cv}
                         placeholder="cv"
                         onChangeText={handleChange('cv')}
                         error={touched.cv && errors.cv ? errors.cv : ''}
-                      />
+                      /> */}
+
+                      <TouchableOpacity
+                        style={{
+                          width: '98%',
+                          borderRadius: RF(8),
+                          borderWidth: 1,
+                          justifyContent: 'center',
+                          alignItems: 'flex-start',
+                          paddingLeft: RF(10),
+                          paddingVertical: RF(10),
+                        }}
+                        onPress={() => {
+                          docxupload();
+                        }}>
+                        <Text style={{fontSize: RF(16)}}>
+                          upload{selectedFile ? selectedFile : 'Upload'}
+                        </Text>
+                      </TouchableOpacity>
                     </View>
                   </View>
 
@@ -185,7 +244,7 @@ const JobApplyScreen = () => {
                       title={'Apply Now'}
                       borderRadius={RF(10)}
                       onPress={() => {
-                        submitHandler(values);
+                        // submitHandler(values);
                       }}
                     />
                   </View>
