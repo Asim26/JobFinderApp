@@ -233,7 +233,7 @@ const JobApplyScreen = () => {
                           docxupload();
                         }}>
                         <Text style={{fontSize: RF(16)}}>
-                          upload{selectedFile ? selectedFile : 'Upload'}
+                          {selectedFile ? selectedFile : 'Upload'}
                         </Text>
                       </TouchableOpacity>
                     </View>
