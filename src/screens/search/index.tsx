@@ -124,6 +124,9 @@ const Search = () => {
         jobTitle={item.jobTitle}
         jobType={item.jobType}
         budget={item.budget}
+        onPress={() => {
+          openJobDetailBottomSheet();
+        }}
       />
     );
   };
@@ -307,9 +310,7 @@ const Search = () => {
                     <Button
                       title={'Apply Filters'}
                       borderRadius={RF(10)}
-                      onPress={() => {
-                        openJobDetailBottomSheet();
-                      }}
+                      onPress={() => {}}
                     />
                   </View>
                 </View>

@@ -211,22 +211,13 @@ const JobApplyScreen = () => {
                   <View style={styles.fifthRow}>
                     <View style={{width: '95%'}}>
                       <Text style={{}}>Your CV</Text>
-                      {/* <Input
-                        returnKeyType={'next'}
-                        value={values.cv}
-                        placeholder="cv"
-                        onChangeText={handleChange('cv')}
-                        error={touched.cv && errors.cv ? errors.cv : ''}
-                      /> */}
-
                       <TouchableOpacity
                         style={{
-                          width: '98%',
+                          width: '100%',
                           borderRadius: RF(8),
                           borderWidth: 1,
                           justifyContent: 'center',
-                          alignItems: 'flex-start',
-                          paddingLeft: RF(10),
+                          alignItems: 'center',
                           paddingVertical: RF(10),
                         }}
                         onPress={() => {

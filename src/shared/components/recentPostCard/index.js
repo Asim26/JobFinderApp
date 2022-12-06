@@ -1,35 +1,37 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {RF} from '../../theme/responsive';
 import colors from '../../../assets/colors/colors';
 import images from '../../../assets/images/images';
 import AppSmallButton from '../appSmallButton';
 
 const RecentPostCard = props => {
-  const {id, companyName, jobTitle, jobType, budget} = props;
+  const {id, companyName, jobTitle, jobType, budget, onPress} = props;
 
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.rowContainer}>
-        <View style={styles.logoContainer}>
-          <AppSmallButton
-            logo={images.google}
-            bgColor={colors.GOOGLE_BTN_COLOR}
-          />
-        </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.textHeading}>
-            {jobTitle ? jobTitle : 'jobTitle'}
-          </Text>
-          <Text style={styles.textdescription}>
-            {jobType ? jobType : 'jobType'}
-          </Text>
-        </View>
-        <View style={styles.priceContainer}>
-          <Text>{budget ? budget : 'budget'}</Text>
+    <TouchableOpacity onPress={props.onPress}>
+      <View style={styles.mainContainer}>
+        <View style={styles.rowContainer}>
+          <View style={styles.logoContainer}>
+            <AppSmallButton
+              logo={images.google}
+              bgColor={colors.GOOGLE_BTN_COLOR}
+            />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.textHeading}>
+              {jobTitle ? jobTitle : 'jobTitle'}
+            </Text>
+            <Text style={styles.textdescription}>
+              {jobType ? jobType : 'jobType'}
+            </Text>
+          </View>
+          <View style={styles.priceContainer}>
+            <Text>{budget ? budget : 'budget'}</Text>
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

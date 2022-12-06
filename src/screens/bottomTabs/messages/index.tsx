@@ -26,6 +26,7 @@ const Message = () => {
       message: 'Nice to talk to you!',
       image: images.userImage,
       selected: true,
+      unread: true,
     },
     {
       id: 1,
@@ -33,6 +34,7 @@ const Message = () => {
       message: 'Just a few kilometers away',
       image: images.userImage,
       selected: false,
+      unread: true,
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ const Message = () => {
       message: 'will be there...',
       image: images.userImage,
       selected: false,
+      unread: true,
     },
     {
       id: 4,
@@ -47,6 +50,7 @@ const Message = () => {
       message: 'Just a few kilometers away',
       image: images.userImage,
       selected: false,
+      unread: false,
     },
     {
       id: 5,
@@ -54,6 +58,7 @@ const Message = () => {
       message: 'Nice to talk to you!',
       image: images.userImage,
       selected: false,
+      unread: false,
     },
     {
       id: 6,
@@ -61,6 +66,7 @@ const Message = () => {
       message: 'Just a few kilometers away',
       image: images.userImage,
       selected: false,
+      unread: false,
     },
   ]);
   const inputRef = useRef();
@@ -79,7 +85,7 @@ const Message = () => {
           onPress={() => {
             navigate(Routes.CONVERSATION);
           }}
-          unread={true}
+          unread={item.unread}
         />
       );
     });
