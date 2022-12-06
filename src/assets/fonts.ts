@@ -1,1 +1,3 @@
-export const FONTS = {};
+export const FONTS = {
+  PoppinsBold: 'Poppins-Bold',
+};

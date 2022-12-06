@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../assets/colors/colors';
+import {FONTS} from '../../assets/fonts';
 import {RF} from '../../shared/theme/responsive';
 
 const styles = StyleSheet.create({
@@ -27,6 +29,8 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     width: RF(200),
     textAlign: 'center',
+    // fontFamily: FONTS.PoppinsBold,
+    color: colors.BLACK,
   },
   textBody: {
     width: RF(250),
