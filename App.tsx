@@ -21,8 +21,11 @@ import {
 import {fcmService} from './src/shared/services/FCMService';
 import {localNotificationService} from './src/shared/services/LocalNotifictionService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {LogBox} from 'react-native';
+
 const App = () => {
   useEffect(() => {
+    LogBox.ignoreAllLogs();
     hasLocationPermission();
     // requestUserPermission();
     // initialConfig();
